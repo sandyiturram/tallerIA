@@ -718,6 +718,115 @@
                     </div>
                 </div>
             </div>
+            <button class="details-toggle" onclick="toggleDetails('prompting-details')">
+                <i class="fas fa-graduation-cap"></i> Ver Técnicas Avanzadas
+            </button>
+
+            <div id="prompting-details" class="details-content">
+                <h3>Técnicas Avanzadas de Prompting</h3>
+                
+                <div class="card" style="margin-top: 1rem;">
+                    <h4><i class="fas fa-link"></i> Cadena de Pensamiento (Chain of Thought)</h4>
+                    <p>Divide problemas complejos en pasos más pequeños.</p>
+                    <div class="highlight-box">
+                        <strong>Ejemplo:</strong><br>
+                        "Para calcular el ROI de este proyecto:<br>
+                        1. Primero identifica todos los costos<br>
+                        2. Luego suma los beneficios esperados<br>
+                        3. Aplica la fórmula ROI<br>
+                        4. Interpreta el resultado"
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top: 1rem;">
+                    <h4><i class="fas fa-sync-alt"></i> Prompting Iterativo</h4>
+                    <p>Refina tu prompt basándote en las respuestas anteriores.</p>
+                    <div class="highlight-box">
+                        <strong>Proceso:</strong><br>
+                        1. Prompt inicial → Respuesta<br>
+                        2. Analiza qué falta o sobra<br>
+                        3. Ajusta el prompt<br>
+                        4. Repite hasta obtener el resultado deseado
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top: 1rem;">
+                    <h4><i class="fas fa-minus-circle"></i> Prompting Negativo</h4>
+                    <p>Especifica claramente qué NO quieres en la respuesta.</p>
+                    <div class="highlight-box">
+                        <strong>Ejemplo:</strong><br>
+                        "Explica el proceso de consolidación financiera. NO incluyas fórmulas matemáticas complejas, NO uses jerga técnica avanzada, NO te extiendas más de 300 palabras."
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 3rem;"><i class="fas fa-dumbbell"></i> Ejercicios Prácticos</h3>
+
+            <div class="exercise-box">
+                <h4><i class="fas fa-file-alt"></i> Ejercicio 1: Resumen de Estados Financieros</h4>
+                <p><strong>Objetivo:</strong> Desarrollar habilidades para la extracción de información clave de documentos financieros complejos.</p>
+                <p><strong>Tarea:</strong> Diseñar un prompt para resumir un Estado de Situación Financiera trimestral en 5 puntos clave para presentación al Directorio.</p>
+                <button class="details-toggle" onclick="toggleDetails('ejercicio1')">
+                    Ver Ejemplo de Solución
+                </button>
+                <div id="ejercicio1" class="details-content">
+                    <div class="highlight-box">
+                        <strong>Prompt Ejemplo:</strong><br>
+                        "Actúa como analista financiero senior. Resume el siguiente informe financiero trimestral en exactamente 5 puntos clave. Cada punto debe:<br>
+                        - Tener máximo 2 líneas<br>
+                        - Incluir cifras específicas<br>
+                        - Enfocarse en cambios vs. trimestre anterior<br>
+                        - Usar lenguaje claro para stakeholders no financieros<br>
+                        Formato: • [Métrica]: [Cambio] ([Impacto])"
+                    </div>
+                </div>
+            </div>
+
+            <div class="exercise-box">
+                <h4><i class="fas fa-lightbulb"></i> Ejercicio 2: Identificación de Riesgos de Auditoría</h4>
+                <p><strong>Objetivo:</strong> Usar IA para brainstorming en identificación de riesgos.</p>
+                <p><strong>Tarea:</strong> Diseña un prompt para generar una lista de riesgos potenciales para una auditoría de empresa tecnológica.</p>
+                <button class="details-toggle" onclick="toggleDetails('ejercicio2')">
+                    Ver Ejemplo de Solución
+                </button>
+                <div id="ejercicio2" class="details-content">
+                    <div class="highlight-box">
+                        <strong>Prompt Ejemplo:</strong><br>
+                        "Como auditor senior especializado en empresas tecnológicas, genera una matriz de 10 riesgos de auditoría para una startup fintech chilena. Para cada riesgo incluye:<br>
+                        1. Área afectada (ej: ingresos, ciberseguridad)<br>
+                        2. Descripción del riesgo (máx 2 líneas)<br>
+                        3. Impacto potencial (Alto/Medio/Bajo)<br>
+                        4. Procedimiento de auditoría sugerido<br>
+                        Considera riesgos específicos del modelo fintech como cumplimiento CMF, reconocimiento de ingresos, seguridad de datos, y normativa de prevención de lavado de activos."
+                    </div>
+                </div>
+            </div>
+
+            <div class="exercise-box">
+                <h4><i class="fas fa-envelope"></i> Ejercicio 3: Redacción Profesional</h4>
+                <p><strong>Objetivo:</strong> Practicar la generación de comunicaciones profesionales.</p>
+                <p><strong>Tarea:</strong> Crea un prompt para redactar un correo a un cliente sobre hallazgos de auditoría.</p>
+                <button class="details-toggle" onclick="toggleDetails('ejercicio3')">
+                    Ver Ejemplo de Solución
+                </button>
+                <div id="ejercicio3" class="details-content">
+                    <div class="highlight-box">
+                        <strong>Prompt Ejemplo:</strong><br>
+                        "Redacta un correo profesional para el CFO de [Empresa Cliente] comunicando 3 hallazgos importantes de nuestra auditoría preliminar. Usa un tono:<br>
+                        - Profesional pero cercano<br>
+                        - Constructivo, no alarmista<br>
+                        - Orientado a soluciones<br><br>
+                        Estructura:<br>
+                        1. Saludo y contexto breve<br>
+                        2. Resumen ejecutivo (1 párrafo)<br>
+                        3. Detalle de hallazgos con recomendaciones<br>
+                        4. Próximos pasos<br>
+                        5. Cierre cordial<br>
+                        Máximo 300 palabras. Evita jerga técnica excesiva."
+                    </div>
+                </div>
+            </div>
+ 
         </section>
         
         <!-- Section 4: Herramientas de IA -->
@@ -893,7 +1002,7 @@
 
         <!-- Resumen Final -->
         <section class="section" style="background: var(--gradient); color: white;">
-            <h2><i class="fas fa-flag-checkered"></i> Resumen y Próximos Pasos</h2>
+            <h2 style="color: #fffffd;"><i class="fas fa-flag-checkered"></i> Resumen y Próximos Pasos</h2>
             <div class="card-grid" style="margin-top: 2rem;">
                 <div class="card" style="background: rgba(255,255,255,0.1); border: 2px solid white; color: white;">
                     <h3>🎯 Lo que Aprendiste</h3>
