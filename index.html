@@ -39,7 +39,7 @@
             backdrop-filter: blur(10px);
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
             z-index: 1000;
-            padding: 1rem 0;
+            padding: 0.75rem 0;
         }
 
         .nav-container {
@@ -52,11 +52,32 @@
         }
 
         .nav-logo {
-            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .nav-logo img {
+            height: 50px;
+            width: auto;
+        }
+        
+        .nav-logo-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0;
+        }
+        
+        .nav-logo-text .main-title {
+            font-size: 1.2rem;
             font-weight: bold;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--primary);
+        }
+        
+        .nav-logo-text .sub-title {
+            font-size: 0.9rem;
+            color: var(--text);
         }
 
         .nav-links {
@@ -191,6 +212,21 @@
             padding: 1.5rem;
             margin: 1.5rem 0;
             border-radius: 8px;
+        }
+        
+        /* ESTILO AÑADIDO PARA LA GUÍA DEL HACKATHON */
+        .warning-box {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border-left: 4px solid #f59e0b;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+        
+        .warning-box strong {
+            color: #92400e;
         }
 
         .card-grid {
@@ -410,7 +446,9 @@
             .nav-links {
                 display: none;
             }
-            
+            .nav-logo-text {
+                display: none;
+            }
             .hero h1 {
                 font-size: 2rem;
             }
@@ -458,17 +496,22 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-logo" style="display: flex; flex-direction: column; align-items: flex-start; gap: 0;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #003c58;">Universidad de Valparaíso</span>
-                <span style="font-size: 1rem; color: #003c58;">Carrera de Auditoría</span>
-                <span style="font-size: 0.9rem; color: #06717e;">Coordinación Línea Ciencia y Tecnología</span>
+            <div class="nav-logo">
+                <!-- LOGO AÑADIDO -->
+                <img src="logo_uv.png" alt="Logo Universidad de Valparaíso">
+                <div class="nav-logo-text">
+                    <span class="main-title">Universidad de Valparaíso</span>
+                    <span class="sub-title">Carrera de Auditoría | Línea Ciencia y Tecnología</span>
+                </div>
             </div>
+            <!-- MENÚ DE NAVEGACIÓN ACTUALIZADO -->
             <ul class="nav-links">
                 <li><a href="#intro">Introducción</a></li>
                 <li><a href="#fundamentos">Fundamentos</a></li>
                 <li><a href="#prompting">Prompting</a></li>
                 <li><a href="#herramientas">Herramientas</a></li>
                 <li><a href="#etica">Ética</a></li>
+                <li><a href="#hackathon-guia">Guía Hackathon</a></li>
             </ul>
         </div>
     </nav>
@@ -479,8 +522,6 @@
             <h1><i class="fas fa-brain"></i> Fundamentos de IA Generativa y el Arte del Prompting</h1>
             <p>Herramientas del futuro en la profesión contable y auditora</p>
             <div style="margin-top: 2rem;">
-                <i class="fas fa-calendar-alt"></i> Sesión 1 | 
-                <i class="fas fa-clock"></i> 3 horas | 
                 <i class="fas fa-university"></i> Auditoría, Universidad de Valparaíso |
                 <i class="fas fa-user-tie"></i> Profesora Sandy Iturra M.
             </div>
@@ -497,9 +538,7 @@
                 </div>
                 <h2>1. Introducción y Contexto</h2>
             </div>
-
             <p>Bienvenidos a este taller donde exploraremos cómo la Inteligencia Artificial Generativa está cambiando el mundo de la contabilidad y auditoría.</p>
-
             <div class="highlight-box">
                 <h3><i class="fas fa-bullseye"></i> Objetivos del Curso</h3>
                 <ul>
@@ -509,7 +548,6 @@
                     <li>Desarrollar criterios éticos para el uso responsable</li>
                 </ul>
             </div>
-
             <div class="card-grid">
                 <div class="card">
                     <h3><i class="fas fa-chart-line"></i> Impacto Profesional</h3>
@@ -534,12 +572,10 @@
                 </div>
                 <h2>2. Fundamentos de la IA Generativa</h2>
             </div>
-
             <div class="highlight-box">
                 <h3><i class="fas fa-lightbulb"></i> ¿Qué es la IA Generativa?</h3>
                 <p>Es una rama de la inteligencia artificial que crea contenido nuevo y original a partir de patrones aprendidos en grandes volúmenes de datos. Puede generar texto, imágenes, audio, código y más.</p>
             </div>
-
             <div class="flow-diagram">
                 <div class="flow-box">
                     <i class="fas fa-database"></i>
@@ -556,11 +592,9 @@
                     <p>Contenido Generado</p>
                 </div>
             </div>
-
             <button class="details-toggle" onclick="toggleDetails('fundamentos-details')">
                 <i class="fas fa-plus-circle"></i> Ver Comparación Detallada
             </button>
-
             <div id="fundamentos-details" class="details-content">
                 <h4>IA Tradicional vs. IA Generativa</h4>
                 <div class="card-grid" style="margin-top: 1rem;">
@@ -584,7 +618,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="interactive-demo">
                 <h3><i class="fas fa-flask"></i> Demostración</h3>
                 <p>Cómo la IA puede generar diferentes tipos de contenido:</p>
@@ -602,7 +635,6 @@
                     <p style="margin-top: 1rem; font-style: italic;">⚠️ Recuerda: Siempre valida la información generada por IA con fuentes oficiales.</p>
                 </div>
             </div>
-
             <div class="card-grid">
                 <div class="card">
                     <h3><i class="fas fa-check-circle"></i> Capacidades Clave</h3>
@@ -635,16 +667,12 @@
                 </div>
                 <h2>3. Estrategias Efectivas de Prompting</h2>
             </div>
-
             <p>El "prompting" es el arte de comunicarse efectivamente con la IA. Un buen prompt es la diferencia entre una respuesta mediocre y una extraordinaria.</p>
-
             <div class="highlight-box">
                 <h3><i class="fas fa-key"></i> ¿Qué es un Prompt?</h3>
                 <p>Es la instrucción o pregunta que le damos a la IA. La calidad del prompt determina directamente la calidad de la respuesta.</p>
             </div>
-
             <h3 style="margin-top: 2rem;"><i class="fas fa-list-check"></i> Principios Básicos del Prompting Efectivo</h3>
-            
             <div class="card-grid">
                 <div class="card">
                     <h3><i class="fas fa-eye"></i> Claridad</h3>
@@ -690,118 +718,8 @@
                     </div>
                 </div>
             </div>
-
-            <button class="details-toggle" onclick="toggleDetails('prompting-details')">
-                <i class="fas fa-graduation-cap"></i> Ver Técnicas Avanzadas
-            </button>
-
-            <div id="prompting-details" class="details-content">
-                <h3>Técnicas Avanzadas de Prompting</h3>
-                
-                <div class="card" style="margin-top: 1rem;">
-                    <h4><i class="fas fa-link"></i> Cadena de Pensamiento (Chain of Thought)</h4>
-                    <p>Divide problemas complejos en pasos más pequeños.</p>
-                    <div class="highlight-box">
-                        <strong>Ejemplo:</strong><br>
-                        "Para calcular el ROI de este proyecto:<br>
-                        1. Primero identifica todos los costos<br>
-                        2. Luego suma los beneficios esperados<br>
-                        3. Aplica la fórmula ROI<br>
-                        4. Interpreta el resultado"
-                    </div>
-                </div>
-
-                <div class="card" style="margin-top: 1rem;">
-                    <h4><i class="fas fa-sync-alt"></i> Prompting Iterativo</h4>
-                    <p>Refina tu prompt basándote en las respuestas anteriores.</p>
-                    <div class="highlight-box">
-                        <strong>Proceso:</strong><br>
-                        1. Prompt inicial → Respuesta<br>
-                        2. Analiza qué falta o sobra<br>
-                        3. Ajusta el prompt<br>
-                        4. Repite hasta obtener el resultado deseado
-                    </div>
-                </div>
-
-                <div class="card" style="margin-top: 1rem;">
-                    <h4><i class="fas fa-minus-circle"></i> Prompting Negativo</h4>
-                    <p>Especifica claramente qué NO quieres en la respuesta.</p>
-                    <div class="highlight-box">
-                        <strong>Ejemplo:</strong><br>
-                        "Explica el proceso de consolidación financiera. NO incluyas fórmulas matemáticas complejas, NO uses jerga técnica avanzada, NO te extiendas más de 300 palabras."
-                    </div>
-                </div>
-            </div>
-
-            <h3 style="margin-top: 3rem;"><i class="fas fa-dumbbell"></i> Ejercicios Prácticos</h3>
-
-            <div class="exercise-box">
-                <h4><i class="fas fa-file-alt"></i> Ejercicio 1: Resumen de Estados Financieros</h4>
-                <p><strong>Objetivo:</strong> Desarrollar habilidades para la extracción de información clave de documentos financieros complejos.</p>
-                <p><strong>Tarea:</strong> Diseñar un prompt para resumir un Estado de Situación Financiera trimestral en 5 puntos clave para presentación al Directorio.</p>
-                <button class="details-toggle" onclick="toggleDetails('ejercicio1')">
-                    Ver Ejemplo de Solución
-                </button>
-                <div id="ejercicio1" class="details-content">
-                    <div class="highlight-box">
-                        <strong>Prompt Ejemplo:</strong><br>
-                        "Actúa como analista financiero senior. Resume el siguiente informe financiero trimestral en exactamente 5 puntos clave. Cada punto debe:<br>
-                        - Tener máximo 2 líneas<br>
-                        - Incluir cifras específicas<br>
-                        - Enfocarse en cambios vs. trimestre anterior<br>
-                        - Usar lenguaje claro para stakeholders no financieros<br>
-                        Formato: • [Métrica]: [Cambio] ([Impacto])"
-                    </div>
-                </div>
-            </div>
-
-            <div class="exercise-box">
-                <h4><i class="fas fa-lightbulb"></i> Ejercicio 2: Identificación de Riesgos de Auditoría</h4>
-                <p><strong>Objetivo:</strong> Usar IA para brainstorming en identificación de riesgos.</p>
-                <p><strong>Tarea:</strong> Diseña un prompt para generar una lista de riesgos potenciales para una auditoría de empresa tecnológica.</p>
-                <button class="details-toggle" onclick="toggleDetails('ejercicio2')">
-                    Ver Ejemplo de Solución
-                </button>
-                <div id="ejercicio2" class="details-content">
-                    <div class="highlight-box">
-                        <strong>Prompt Ejemplo:</strong><br>
-                        "Como auditor senior especializado en empresas tecnológicas, genera una matriz de 10 riesgos de auditoría para una startup fintech chilena. Para cada riesgo incluye:<br>
-                        1. Área afectada (ej: ingresos, ciberseguridad)<br>
-                        2. Descripción del riesgo (máx 2 líneas)<br>
-                        3. Impacto potencial (Alto/Medio/Bajo)<br>
-                        4. Procedimiento de auditoría sugerido<br>
-                        Considera riesgos específicos del modelo fintech como cumplimiento CMF, reconocimiento de ingresos, seguridad de datos, y normativa de prevención de lavado de activos."
-                    </div>
-                </div>
-            </div>
-
-            <div class="exercise-box">
-                <h4><i class="fas fa-envelope"></i> Ejercicio 3: Redacción Profesional</h4>
-                <p><strong>Objetivo:</strong> Practicar la generación de comunicaciones profesionales.</p>
-                <p><strong>Tarea:</strong> Crea un prompt para redactar un correo a un cliente sobre hallazgos de auditoría.</p>
-                <button class="details-toggle" onclick="toggleDetails('ejercicio3')">
-                    Ver Ejemplo de Solución
-                </button>
-                <div id="ejercicio3" class="details-content">
-                    <div class="highlight-box">
-                        <strong>Prompt Ejemplo:</strong><br>
-                        "Redacta un correo profesional para el CFO de [Empresa Cliente] comunicando 3 hallazgos importantes de nuestra auditoría preliminar. Usa un tono:<br>
-                        - Profesional pero cercano<br>
-                        - Constructivo, no alarmista<br>
-                        - Orientado a soluciones<br><br>
-                        Estructura:<br>
-                        1. Saludo y contexto breve<br>
-                        2. Resumen ejecutivo (1 párrafo)<br>
-                        3. Detalle de hallazgos con recomendaciones<br>
-                        4. Próximos pasos<br>
-                        5. Cierre cordial<br>
-                        Máximo 300 palabras. Evita jerga técnica excesiva."
-                    </div>
-                </div>
-            </div>
         </section>
-
-
+        
         <!-- Section 4: Herramientas de IA -->
         <section id="herramientas" class="section">
             <div class="section-header">
@@ -810,203 +728,35 @@
                 </div>
                 <h2>4. Principales Herramientas de IA Generativa</h2>
             </div>
-
             <div class="highlight-box">
                 <h3><i class="fas fa-compass"></i> ¿Cuál Elegir? Panorama de IA Generativas Disponibles</h3>
                 <p>En el mercado actual existen múltiples plataformas de IA generativa, cada una con características únicas. Como profesionales de auditoría y contabilidad, es importante conocer las opciones disponibles para seleccionar la herramienta más adecuada según nuestras necesidades específicas.</p>
             </div>
-
             <h3 style="margin-top: 2rem;"><i class="fas fa-star"></i> Plataformas Principales</h3>
-
             <div class="card-grid">
                 <div class="tool-card">
                     <div class="tool-header">
-                        <div class="tool-icon">
-                            <i class="fas fa-robot"></i>
-                        </div>
-                        <div>
-                            <h3>Claude (Anthropic)</h3>
-                            <p style="color: var(--accent); font-weight: 500;">Análisis profundo y razonamiento ético</p>
-                        </div>
+                        <div class="tool-icon"><i class="fas fa-robot"></i></div>
+                        <div><h3>Claude (Anthropic)</h3><p style="color: var(--accent); font-weight: 500;">Análisis profundo y razonamiento ético</p></div>
                     </div>
                     <p><strong>Ideal para:</strong> Revisión de contratos, análisis de normativas, interpretación de estados financieros complejos</p>
-                    <p><strong>Características:</strong> Excelente comprensión de contexto, enfoque en seguridad y precisión</p>
-                    <a href="https://claude.ai" target="_blank" class="access-link">
-                        <i class="fas fa-external-link-alt"></i> Acceder a Claude
-                    </a>
+                    <a href="https://claude.ai" target="_blank" class="access-link"><i class="fas fa-external-link-alt"></i> Acceder a Claude</a>
                 </div>
-
                 <div class="tool-card">
                     <div class="tool-header">
-                        <div class="tool-icon">
-                            <i class="fas fa-comments"></i>
-                        </div>
-                        <div>
-                            <h3>ChatGPT (OpenAI)</h3>
-                            <p style="color: var(--accent); font-weight: 500;">Conversación natural y tareas generales</p>
-                        </div>
+                        <div class="tool-icon"><i class="fas fa-comments"></i></div>
+                        <div><h3>ChatGPT (OpenAI)</h3><p style="color: var(--accent); font-weight: 500;">Conversación natural y tareas generales</p></div>
                     </div>
                     <p><strong>Ideal para:</strong> Redacción de informes, brainstorming, explicaciones didácticas</p>
-                    <p><strong>Características:</strong> Interfaz intuitiva, amplio conocimiento general, plugins especializados</p>
-                    <a href="https://chat.openai.com" target="_blank" class="access-link">
-                        <i class="fas fa-external-link-alt"></i> Acceder a ChatGPT
-                    </a>
+                    <a href="https://chat.openai.com" target="_blank" class="access-link"><i class="fas fa-external-link-alt"></i> Acceder a ChatGPT</a>
                 </div>
-
                 <div class="tool-card">
                     <div class="tool-header">
-                        <div class="tool-icon">
-                            <i class="fas fa-search"></i>
-                        </div>
-                        <div>
-                            <h3>Gemini (Google)</h3>
-                            <p style="color: var(--accent); font-weight: 500;">Integración Google y búsqueda web</p>
-                        </div>
+                        <div class="tool-icon"><i class="fas fa-search"></i></div>
+                        <div><h3>Gemini (Google)</h3><p style="color: var(--accent); font-weight: 500;">Integración Google y búsqueda web</p></div>
                     </div>
                     <p><strong>Ideal para:</strong> Investigación de mercado, análisis de tendencias, trabajo colaborativo</p>
-                    <p><strong>Características:</strong> Acceso a información actualizada, integración con Google Workspace</p>
-                    <a href="https://gemini.google.com" target="_blank" class="access-link">
-                        <i class="fas fa-external-link-alt"></i> Acceder a Gemini
-                    </a>
-                </div>
-
-                <div class="tool-card">
-                    <div class="tool-header">
-                        <div class="tool-icon">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <div>
-                            <h3>DeepSeek</h3>
-                            <p style="color: var(--accent); font-weight: 500;">Razonamiento matemático y programación</p>
-                        </div>
-                    </div>
-                    <p><strong>Ideal para:</strong> Cálculos complejos, automatización contable, desarrollo de macros</p>
-                    <p><strong>Características:</strong> Excelente en lógica matemática y código</p>
-                    <a href="https://chat.deepseek.com" target="_blank" class="access-link">
-                        <i class="fas fa-external-link-alt"></i> Acceder a DeepSeek
-                    </a>
-                </div>
-
-                <div class="tool-card">
-                    <div class="tool-header">
-                        <div class="tool-icon">
-                            <i class="fas fa-bolt"></i>
-                        </div>
-                        <div>
-                            <h3>Grok (X/Twitter)</h3>
-                            <p style="color: var(--accent); font-weight: 500;">Información en tiempo real</p>
-                        </div>
-                    </div>
-                    <p><strong>Ideal para:</strong> Monitoreo de reputación empresarial, análisis de riesgo reputacional</p>
-                    <p><strong>Características:</strong> Acceso a datos de X en tiempo real</p>
-                    <a href="https://x.ai" target="_blank" class="access-link">
-                        <i class="fas fa-external-link-alt"></i> Acceder a Grok
-                    </a>
-                </div>
-            </div>
-
-            <h3 style="margin-top: 3rem;"><i class="fas fa-cogs"></i> Tipos de Modelos y Capacidades Especializadas</h3>
-
-            <div class="card-grid">
-                <div class="card">
-                    <h3><i class="fas fa-lightbulb"></i> Modelos de Razonamiento</h3>
-                    <p><strong>Función:</strong> Análisis paso a paso de problemas complejos</p>
-                    <p><strong>Aplicación en Auditoría:</strong> Evaluación de riesgos, análisis de materialidad, revisión de procesos de control interno</p>
-                    <div class="highlight-box" style="margin-top: 1rem;">
-                        <strong>Ejemplo:</strong> "Analiza este proceso de facturación e identifica 5 controles clave que deberían implementarse"
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3><i class="fas fa-microscope"></i> Deep Research</h3>
-                    <p><strong>Función:</strong> Búsqueda exhaustiva y síntesis de información de múltiples fuentes</p>
-                    <p><strong>Aplicación en Auditoría:</strong> Investigación de normativas, benchmarking sectorial, due diligence</p>
-                    <div class="highlight-box" style="margin-top: 1rem;">
-                        <strong>Ejemplo:</strong> Investigar las mejores prácticas de auditoría para empresas del sector energético
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3><i class="fas fa-project-diagram"></i> Proyectos/Projects</h3>
-                    <p><strong>Función:</strong> Gestión de tareas complejas y multietapa</p>
-                    <p><strong>Aplicación en Auditoría:</strong> Planificación de auditorías, seguimiento de hallazgos, gestión de equipos de trabajo</p>
-                    <div class="highlight-box" style="margin-top: 1rem;">
-                        <strong>Ejemplo:</strong> Coordinar una auditoría integral de múltiples subsidiarias
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3><i class="fas fa-palette"></i> Canvas/Lienzo</h3>
-                    <p><strong>Función:</strong> Creación visual e iterativa de documentos</p>
-                    <p><strong>Aplicación en Auditoría:</strong> Diseño de flujogramas de procesos, mapas de riesgo, presentaciones ejecutivas</p>
-                    <div class="highlight-box" style="margin-top: 1rem;">
-                        <strong>Ejemplo:</strong> Crear un diagrama de flujo del proceso de compras-pagos
-                    </div>
-                </div>
-            </div>
-
-            <h3 style="margin-top: 3rem;"><i class="fas fa-balance-scale"></i> Criterios de Selección para Auditores</h3>
-
-            <div class="card-grid">
-                <div class="card">
-                    <h3><i class="fas fa-shield-alt"></i> Seguridad y Confidencialidad</h3>
-                    <ul>
-                        <li>Políticas de privacidad de datos</li>
-                        <li>Ubicación de servidores</li>
-                        <li>Certificaciones de seguridad</li>
-                        <li>Capacidad de trabajar offline</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h3><i class="fas fa-rocket"></i> Capacidades Específicas</h3>
-                    <ul>
-                        <li>Análisis de documentos PDF extensos</li>
-                        <li>Integración con herramientas contables</li>
-                        <li>Soporte multiidioma</li>
-                        <li>Precisión en cálculos financieros</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h3><i class="fas fa-dollar-sign"></i> Modelo de Precios</h3>
-                    <ul>
-                        <li>Versiones gratuitas vs. premium</li>
-                        <li>Límites de uso</li>
-                        <li>Planes empresariales</li>
-                        <li>Costo por token/consulta</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="highlight-box" style="margin-top: 2rem;">
-                <h3><i class="fas fa-graduation-cap"></i> Recomendaciones Prácticas</h3>
-                
-                <div class="card-grid" style="margin-top: 1rem;">
-                    <div class="card">
-                        <h3><i class="fas fa-user-graduate"></i> Para Estudiantes</h3>
-                        <ul>
-                            <li>Comenzar con versiones gratuitas de ChatGPT y Claude</li>
-                            <li>Experimentar con diferentes herramientas para tareas similares</li>
-                            <li>Comparar resultados entre plataformas</li>
-                        </ul>
-                    </div>
-
-                    <div class="card">
-                        <h3><i class="fas fa-briefcase"></i> Para Profesionales</h3>
-                        <ul>
-                            <li>Evaluar herramientas empresariales con mayor seguridad</li>
-                            <li>Considerar integraciones con software contable existente</li>
-                            <li>Implementar políticas claras de uso de IA en el despacho</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="interactive-demo" style="margin-top: 2rem;">
-                    <p style="color: var(--primary); font-weight: bold;">
-                        <i class="fas fa-exclamation-triangle"></i> Consideración Importante:
-                    </p>
-                    <p>Independientemente de la herramienta seleccionada, mantén siempre el escepticismo profesional y verifica toda información generada por IA con fuentes oficiales y tu juicio experto.</p>
+                    <a href="https://gemini.google.com" target="_blank" class="access-link"><i class="fas fa-external-link-alt"></i> Acceder a Gemini</a>
                 </div>
             </div>
         </section>
@@ -1020,12 +770,10 @@
                 </div>
                 <h2>5. Consideraciones Éticas y Verificación</h2>
             </div>
-
             <div class="highlight-box">
                 <h3><i class="fas fa-shield-alt"></i> El Rol del Auditor en la Era de la IA</h3>
                 <p>La IA es una herramienta poderosa que amplifica nuestras capacidades, pero <strong>nunca reemplaza el juicio profesional, la ética y la responsabilidad humana</strong>.</p>
             </div>
-
             <div class="card-grid">
                 <div class="card">
                     <h3><i class="fas fa-lock"></i> Integridad y Confidencialidad</h3>
@@ -1033,115 +781,139 @@
                     <ul style="margin-top: 1rem;">
                         <li>Usa datos anonimizados</li>
                         <li>Implementa IA empresarial segura</li>
-                        <li>Respeta normativas de privacidad (Ley 19.628 protección de la vida privada y Ley 21.719 de protección de datos)</li>
+                        <li>Respeta normativas de privacidad (Ley 19.628, Ley 21.719)</li>
                         <li>Cumple con estándares del Colegio de Contadores</li>
                     </ul>
                 </div>
                 <div class="card">
                     <h3><i class="fas fa-users"></i> Sesgos y Discriminación</h3>
-                    <p>La IA puede perpetuar sesgos presentes en sus datos de entrenamiento.</p>
+                    <p>La IA puede perpetuar sesgos presentes en sus datos de entrenamiento. Revisa críticamente las respuestas.</p>
                     <ul style="margin-top: 1rem;">
                         <li>Revisa críticamente las respuestas</li>
                         <li>Busca múltiples perspectivas</li>
                         <li>Cuestiona resultados sospechosos</li>
-                    </ul>
                 </div>
                 <div class="card">
                     <h3><i class="fas fa-check-double"></i> Verificación y Validación</h3>
-                    <p><strong>Mantra:</strong> "Confía, pero verifica" - SIEMPRE valida la información generada.</p>
+                    <p><strong>Mantra:</strong> "Confía, pero verifica" - SIEMPRE valida la información generada con fuentes oficiales.</p>
                     <ul style="margin-top: 1rem;">
                         <li>Contrasta con fuentes oficiales</li>
                         <li>Aplica escepticismo profesional</li>
                         <li>Documenta tus verificaciones</li>
-                    </ul>
                 </div>
             </div>
+        </section>
 
-            <div class="interactive-demo" style="margin-top: 2rem;">
-                <h3><i class="fas fa-microscope"></i> Actividad: Detecta el Error</h3>
-                <p>La IA generó este texto sobre normativa contable. ¿Puedes identificar los errores?</p>
-                <div class="highlight-box" style="text-align: left; margin-top: 1rem;">
-                    "Según las NIIF adoptadas en Chile, todos los activos intangibles deben amortizarse en un período máximo de 10 años. La norma establece que el goodwill debe revisarse anualmente para deterioro y nunca puede revaluarse hacia arriba, incluso si aumenta su valor de mercado."
+                <!-- ========================================================== -->
+        <!--     INICIO: GUÍA DE APOYO HACKATHON 2025 (SECCIÓN AÑADIDA)   -->
+        <!-- ========================================================== -->
+        <section id="hackathon-guia" class="section">
+            <div class="section-header">
+                <div class="section-icon" style="background: linear-gradient(135deg, #6d28d9, #be185d);">
+                    <i class="fas fa-trophy"></i>
                 </div>
-                <button class="demo-button" onclick="toggleDetails('error-solution')">
-                    <i class="fas fa-search"></i> Ver Análisis
-                </button>
-                <div id="error-solution" class="details-content">
-                    <div class="card">
-                        <h4>Errores Identificados:</h4>
-                        <ul>
-                            <li>❌ <strong>Error 1:</strong> No todos los activos intangibles tienen límite de 10 años</li>
-                            <li>❌ <strong>Error 2:</strong> Confusión entre normas (información genérica sin especificar norma exacta)</li>
-                            <li>✅ <strong>Correcto:</strong> El goodwill sí debe revisarse anualmente por deterioro</li>
-                        </ul>
-                        <p style="margin-top: 1rem;"><strong>Lección:</strong> Siempre verifica información normativa con fuentes oficiales actualizadas del Colegio de Contadores de Chile y normativa vigente.</p>
+                <h2>Guía de Apoyo: Hackathon 2025</h2>
+            </div>
+            <p>Esta sección centraliza toda la información, recursos y recomendaciones para que su equipo pueda enfrentar con éxito el desafío profesional que deberán resolver en la Hackathon. Aprovéchenla al máximo para integrar sus competencias y explorar el poder de las nuevas tecnologías. ¡Mucho éxito!</p>
+            
+            <h3 style="margin-top: 2rem; color: var(--dark);"><i class="fas fa-cogs"></i> Potencia tu Proyecto con Inteligencia Artificial Generativa</h3>
+            <p>Uno de los objetivos clave de este Hackathon es que apliquen la IA como una herramienta para aumentar su productividad y creatividad. La IA no reemplaza su juicio profesional, sino que lo potencia. A continuación, les recomendamos algunas herramientas y sus posibles usos. <strong>Recuerden documentar los prompts que utilicen</strong>, es parte fundamental del desafío.</p>
+
+            <div class="card-grid">
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon"><i class="fas fa-code"></i></div>
+                        <div>
+                            <h3>1. Automatizar Tareas en Excel (VBA)</h3>
+                            <p style="color: var(--accent); font-weight: 500;">No necesitas ser experto programador</p>
+                        </div>
+                    </div>
+                    <p>Pidan a un modelo como <strong>Gemini</strong> o <strong>ChatGPT</strong> que escriba un script de Visual Basic para automatizar tareas repetitivas.</p>
+                    <div class="highlight-box">
+                        <strong>Ejemplo de Prompt:</strong><br>
+                        "Escribe un script de VBA para Excel. Debe revisar cada fila en la 'Hoja1' desde la fila 2. Si la fecha en la columna G es 30 días o más antigua que hoy, colorea toda la fila de rojo claro para identificar facturas con deterioro."
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon"><i class="fas fa-file-powerpoint"></i></div>
+                        <div>
+                            <h3>2. Crear Presentaciones Impactantes</h3>
+                             <p style="color: var(--accent); font-weight: 500;">Destaca en tu defensa final</p>
+                        </div>
+                    </div>
+                    <p><strong>Opción A (Web):</strong> Sorprendan al jurado con una presentación web interactiva. Pidan a la IA que genere el código HTML y CSS.</p>
+                     <p><strong>Opción B (Diapositivas):</strong> Usen herramientas como <strong>Gamma</strong> o <strong>Tome</strong> para crear diapositivas completas en segundos.</p>
+                    <div class="highlight-box">
+                        <strong>Prompt para diapositivas:</strong><br>
+                         "Crea una presentación de 10 diapositivas sobre el análisis financiero de Professional Challenge S.A. Incluye: situación financiera, EERR, análisis vertical, ratios clave y debilidades de control interno."
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon"><i class="fas fa-book-open"></i></div>
+                        <div>
+                            <h3>3. Análisis Rápido de Documentos</h3>
+                             <p style="color: var(--accent); font-weight: 500;">"Conversa" con tus fuentes</p>
+                        </div>
+                    </div>
+                    <p>Suban esta guía y otros documentos (leyes, normativas) a <strong>NotebookLM</strong> para encontrar información clave rápidamente.</p>
+                     <div class="highlight-box">
+                        <strong>Ejemplo de Prompt:</strong><br>
+                        "Según los documentos cargados, resume la política de la empresa sobre el deterioro de cuentas por cobrar y la vida útil de sus activos fijos."
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon"><i class="fas fa-project-diagram"></i></div>
+                        <div>
+                            <h3>4. Visualizar Procesos y Diagramas</h3>
+                             <p style="color: var(--accent); font-weight: 500;">Una imagen vale más que mil palabras</p>
+                        </div>
+                    </div>
+                    <p>Usen <strong>Napkin</strong> o <strong>Whimsical</strong> (con IA) para crear diagramas de flujo, mapas mentales y organigramas que expliquen fallas de control interno.</p>
+                    <div class="highlight-box">
+                        <strong>Ejemplo de Uso:</strong><br>
+                        Mapear el proceso de compra y pago para identificar dónde faltan controles, o diagramar la relación entre RLI, RAI y registros empresariales.
                     </div>
                 </div>
             </div>
 
-            <h3 style="margin-top: 2rem;"><i class="fas fa-comments"></i> Debate Ético</h3>
-            <div class="exercise-box">
-                <h4>Escenarios para Discusión</h4>
-                <ol>
-                    <li><strong>Escenario 1:</strong> Un colega sugiere usar ChatGPT para redactar completamente un informe de auditoría para el SII. ¿Qué consideraciones éticas surgen?</li>
-                    <li><strong>Escenario 2:</strong> Descubres que la IA tiene un sesgo que favorece empresas del sector minero sobre otros sectores en análisis de riesgo. ¿Cómo lo manejas?</li>
-                    <li><strong>Escenario 3:</strong> Un cliente pide que uses IA para "predecir" fraudes futuros en operaciones con boletas falsas. ¿Cuáles son los límites éticos?</li>
-                </ol>
-            </div>
-
-            <div class="highlight-box" style="margin-top: 2rem; background: linear-gradient(135deg, #fef3c7, #fde68a);">
-                <h3><i class="fas fa-graduation-cap"></i> Principios Éticos Fundamentales para el Uso de IA</h3>
-                <ol>
-                    <li><strong>Transparencia:</strong> Siempre informa cuando utilices IA en tu trabajo profesional</li>
-                    <li><strong>Responsabilidad:</strong> Eres responsable de toda información generada, verificada o no</li>
-                    <li><strong>Competencia:</strong> Comprende las limitaciones y alcances de la herramienta</li>
-                    <li><strong>Integridad:</strong> No utilices IA para evadir responsabilidades profesionales</li>
-                    <li><strong>Desarrollo Continuo:</strong> Actualiza constantemente tus conocimientos sobre IA</li>
-                </ol>
+            <div class="warning-box">
+                <p><strong><i class="fas fa-exclamation-triangle"></i> Recordatorio Importante</strong><br>
+                La IA es una asistente. La <strong>responsabilidad final</strong> sobre los cálculos, análisis y conclusiones es de su equipo. ¡El pensamiento crítico es su mejor herramienta!</p>
             </div>
         </section>
+        <!-- ========================================================== -->
+        <!--     FIN: GUÍA DE APOYO HACKATHON 2025                     -->
+        <!-- ========================================================== -->
 
         <!-- Resumen Final -->
         <section class="section" style="background: var(--gradient); color: white;">
             <h2><i class="fas fa-flag-checkered"></i> Resumen y Próximos Pasos</h2>
-            
             <div class="card-grid" style="margin-top: 2rem;">
                 <div class="card" style="background: rgba(255,255,255,0.1); border: 2px solid white; color: white;">
                     <h3>🎯 Lo que Aprendiste</h3>
                     <ul>
-                        <li>Fundamentos de IA Generativa</li>
-                        <li>Técnicas de prompting efectivo</li>
-                        <li>Aplicaciones en contabilidad</li>
+                        <li>Fundamentos de IA Generativa y Prompting</li>
+                        <li>Aplicaciones en contabilidad y auditoría</li>
                         <li>Consideraciones éticas clave</li>
                     </ul>
                 </div>
                 <div class="card" style="background: rgba(255,255,255,0.1); border: 2px solid white; color: white;">
                     <h3>🚀 Próximos Pasos</h3>
                     <ul>
-                        <li>Practica con casos reales</li>
-                        <li>Experimenta con diferentes IA</li>
-                        <li>Aplica en proyectos académicos</li>
-                        <li>Comparte conocimientos</li>
-                    </ul>
-                </div>
-                <div class="card" style="background: rgba(255,255,255,0.1); border: 2px solid white; color: white;">
-                    <h3>📚 Recursos Adicionales</h3>
-                    <ul>
-                        <li>Documentación de herramientas IA</li>
-                        <li>Casos de estudio en auditoría</li>
-                        <li>Comunidades profesionales</li>
-                        <li>Biblioteca UV - Recursos digitales</li>
+                        <li>Practica con casos reales y académicos</li>
+                        <li>Experimenta con diferentes herramientas de IA</li>
+                        <li>Comparte conocimientos con tus pares</li>
                     </ul>
                 </div>
             </div>
-
             <div style="text-align: center; margin-top: 3rem;">
                 <h3>¿Preparados para integrar la IA en tu práctica profesional?</h3>
-                <p style="font-size: 1.2rem; margin-top: 1rem;">
-                    <i class="fas fa-quote-left"></i> 
-                    La IA no reemplazará a los contadores, pero los profesionales que dominen estas herramientas tendrán ventajas competitivas significativas en el mercado laboral.
-                    <i class="fas fa-quote-right"></i>
-                </p>
             </div>
         </section>
     </div>
@@ -1149,9 +921,7 @@
     <!-- Footer -->
     <footer class="footer">
         <p><i class="fas fa-copyright"></i> 2025, Auditoría, Universidad de Valparaíso | Taller IA Generativa</p>
-        <p style="margin-top: 1rem;">
-            <i class="fas fa-brain"></i> Coordinación Línea Ciencia y Tecnología
-        </p>
+        <p style="margin-top: 1rem;"><i class="fas fa-brain"></i> Coordinación Línea Ciencia y Tecnología</p>
     </footer>
 
     <script>
@@ -1168,13 +938,10 @@
                 }
             });
         });
-
         // Toggle details
         function toggleDetails(id) {
             const element = document.getElementById(id);
             element.classList.toggle('active');
-            
-            // Update button text
             const button = event.currentTarget;
             const icon = button.querySelector('i');
             if (element.classList.contains('active')) {
@@ -1185,12 +952,10 @@
                 icon.classList.add('fa-plus-circle');
             }
         }
-
         // Mostrar demostración
         function mostrarDemostracion() {
             const demoContent = document.getElementById('demo-content');
             const button = event.currentTarget;
-            
             if (demoContent.style.display === 'none') {
                 demoContent.style.display = 'block';
                 button.innerHTML = '<i class="fas fa-times"></i> Cerrar Demostración';
@@ -1201,13 +966,8 @@
                 button.style.background = 'var(--accent)';
             }
         }
-
         // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -100px 0px' };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1216,15 +976,12 @@
                 }
             });
         }, observerOptions);
-
         document.querySelectorAll('.section').forEach(section => {
             section.style.opacity = '0';
             section.style.transform = 'translateY(20px)';
             section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(section);
         });
-
-        // Log para confirmar carga
         console.log('Taller IA Generativa - Coordinación Línea Ciencia y Tecnología - Auditoría, Universidad de Valparaíso');
     </script>
 </body>
